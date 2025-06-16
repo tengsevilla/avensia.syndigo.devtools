@@ -52,7 +52,6 @@ export async function PUT(req: Request) {
                         },
                     },
                 });
-                console.log("API Response:", data);
                 x++;
                 updateTask(taskId, {
                     status: "running",
