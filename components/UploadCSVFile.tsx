@@ -36,7 +36,7 @@ export const UploadCSVFile = (props: Props) => {
                     .map((row: any) => ({
                         Type: row["Type"],
                         ID: row["ID"],
-                        AttributeValue: row["Status MDM"],
+                        AttributeValue: row["Varens Status MDM"],
                     }))
                     .filter((row: CSVColumns) => row.Type && row.ID);
 

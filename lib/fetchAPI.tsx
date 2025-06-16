@@ -30,6 +30,7 @@ export const fetchAPI = async (
             headers,
             body: payload ? JSON.stringify(payload) : undefined,
         })
+
         if (!res.ok) {
             const errorData = await res.json()
             console.error(`Error ${res.status}:`, errorData)

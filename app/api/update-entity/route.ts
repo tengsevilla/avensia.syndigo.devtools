@@ -25,6 +25,7 @@ export async function PUT(req: Request) {
     let x = 0;
     let err: string[] = [];
 
+    // console.log("Received PUT request:", { taskId, batchIndex, rows });
     createTask(taskId);
 
     (async () => {
@@ -41,7 +42,7 @@ export async function PUT(req: Request) {
                                 thgWorkflowMDMStatus: {
                                     values: [
                                         {
-                                            value: `${rows[i].AttributeValue}`,
+                                            value: rows[i].AttributeValue,
                                             locale: "nb-NO",
                                             source: "internal",
                                         },
@@ -51,7 +52,7 @@ export async function PUT(req: Request) {
                         },
                     },
                 });
-
+                console.log("API Response:", data);
                 x++;
                 updateTask(taskId, {
                     status: "running",
