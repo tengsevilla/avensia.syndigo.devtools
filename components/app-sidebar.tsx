@@ -56,6 +56,10 @@ const data = {
           url: "/bulk-operations/update-entities",
         },
         {
+          title: "Update Entities 2 Attr",
+          url: "/bulk-operations/update-entities-2",
+        },
+        {
           title: "Delete Workflows",
           url: "/bulk-operations/delete-workflows",
         },
