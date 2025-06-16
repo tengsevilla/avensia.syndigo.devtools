@@ -38,10 +38,10 @@ export async function PUT(req: Request) {
                         type: rows[i].Type,
                         data: {
                             attributes: {
-                                ASTEST: {
+                                thgWorkflowMDMStatus: {
                                     values: [
                                         {
-                                            value: "test1 update",
+                                            value: `${rows[i].AttributeValue}`,
                                             locale: "nb-NO",
                                             source: "internal",
                                         },
