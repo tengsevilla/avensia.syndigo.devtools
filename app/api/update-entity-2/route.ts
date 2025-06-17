@@ -40,24 +40,24 @@ export async function PUT(req: Request) {
                         type: rows[i].Type,
                         data: {
                             attributes: {
-                                thgMDMStatus: {
-                                    values: [
+                                "thgMDMStatus": {
+                                    "values": [
                                         {
-                                            value: rows[i].AttributeValue,
-                                            locale: "nb-NO",
-                                            source: "internal",
-                                        },
-                                    ],
+                                            "value": rows[i].AttributeValue,
+                                            "locale": "nb-NO",
+                                            "source": "internal"
+                                        }
+                                    ]
                                 },
-                                thgM3Status: {
-                                    values: [
+                                "thgM3Status": {
+                                    "values": [
                                         {
-                                            value: rows[i].AttributeValue2,
-                                            locale: "nb-NO",
-                                            source: "internal",
-                                        },
-                                    ],
-                                },
+                                            "value": rows[i].AttributeValue2,
+                                            "locale": "nb-NO",
+                                            "source": "internal"
+                                        }
+                                    ]
+                                }
                             },
                         },
                     },
@@ -66,7 +66,7 @@ export async function PUT(req: Request) {
                 updateTask(taskId, {
                     status: "running",
                     count: x,
-                    message: `Processing batch ${batchIndex + 1}`,
+                    message: `Processing batch ${batchIndex + 1} | check id: ${rows[i].ID}`,
                 });
 
                 if (data.response.status !== "success") {
