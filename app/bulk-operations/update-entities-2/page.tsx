@@ -28,7 +28,7 @@ export default function Page() {
                 const batch = rowsBatch[i];
 
                 // 1. Request a new taskId for this batch
-                const resInit = await fetch("/api/update-entity", { method: "POST" });
+                const resInit = await fetch("/api/update-entity-2", { method: "POST" });
                 const initData = await resInit.json();
                 const taskId = initData.taskId;
                 setTaskId(taskId);
