@@ -34,7 +34,7 @@ export default function Page() {
                 setTaskId(taskId);
 
                 // 2. Submit batch
-                const res = await fetch("/api/update-entity", {
+                const res = await fetch("/api/update-entity-2", {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ taskId, batchIndex: i, rows: batch }),
@@ -54,7 +54,7 @@ export default function Page() {
 
                 while (maxTries-- > 0) {
                     await new Promise((r) => setTimeout(r, 2000));
-                    const statusRes = await fetch(`/api/update-entity/status/${taskId}`);
+                    const statusRes = await fetch(`/api/update-entity-2/status/${taskId}`);
                     const statusData = await statusRes.json();
                     if (statusData.status === "completed") {
                         console.log(`✅ Batch ${i} (taskId: ${taskId}) completed.`);
