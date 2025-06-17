@@ -88,7 +88,7 @@ export default function Page() {
 
 
     const { data, error } = useSWR(
-        taskId ? `/api/update-entity/status/${taskId}` : null,
+        taskId ? `/api/update-entity-2/status/${taskId}` : null,
         fetcher,
         {
             refreshInterval: 1000,
