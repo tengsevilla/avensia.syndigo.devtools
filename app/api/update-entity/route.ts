@@ -56,7 +56,7 @@ export async function PUT(req: Request) {
                 updateTask(taskId, {
                     status: "running",
                     count: x,
-                    message: `Processing batch ${batchIndex + 1}`,
+                    message: `Salgsklar lProcessing batch ${batchIndex + 1} | Check id: ${rows[i].ID}`,
                 });
 
                 if (data.response.status !== "success") {
